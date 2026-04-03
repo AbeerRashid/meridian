@@ -1,6 +1,6 @@
 "use client";
 import { useContext, useState } from 'react';
-import { CurrencyContext } from '../context/CurrenyContext'; // Role 3 Data
+import { CurrencyContext } from '../context/CurrencyContext'; // Role 3 Data
 import { calculateExchange } from '../utils/calculation'; // Role 2 Math
 import { RefreshCcw } from 'lucide-react'; // A nice icon for the UI
 

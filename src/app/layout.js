@@ -5,7 +5,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        // We wrap the children in the Provider so the UI can see the API data and loading state
+       {/* We wrap the children in the Provider so the UI can see the API data and loading state `rates` and `loading` */}
         <CurrencyProvider>
           {children}
         </CurrencyProvider>
