@@ -1,66 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import { useContext, useState } from 'react';
+import { CurrencyContext } from '../context/CurrenyContext'; // Role 3 Data
+import { calculateExchange } from '../utils/calculation'; // Role 2 Math
+import { RefreshCcw } from 'lucide-react'; // A nice icon for the UI
 
 export default function Home() {
+  // Grab the live prices from our "Global Brain"
+  const { rates, loading } = useContext(CurrencyContext);
+
+  // Create "States" to track what the user types and selects
+  const [amount, setAmount] = useState(1);
+  const [from, setFrom] = useState('USD');
+  const [to, setTo] = useState('CAD');
+
+  //Show a loading screen if the API is still fetching
+  if (loading) return <div className="loader">Updating Markets...</div>;
+
+  // Run the math logic using the data we fetched
+  const result = calculateExchange(amount, rates[from], rates[to]);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="container">
+      <div className="card">
+        <h1>Meridian</h1>
+        <p>Real-time Global Exchange</p>
+
+        {/* Input box for the amount */}
+        <input 
+          type="number" 
+          value={amount} 
+          onChange={(e) => setAmount(e.target.value)} 
+          className="amount-input"
         />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+
+        <div className="selectors">
+          {/* Dropdown for 'From' Currency */}
+          <select value={from} onChange={(e) => setFrom(e.target.value)}>
+            {Object.keys(rates).map(code => <option key={code}>{code}</option>)}
+          </select>
+
+          <RefreshCcw size={20} color="#f59e0b" />
+
+          {/* Dropdown for 'To' Currency */}
+          <select value={to} onChange={(e) => setTo(e.target.value)}>
+            {Object.keys(rates).map(code => <option key={code}>{code}</option>)}
+          </select>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        {/* The big result display */}
+        <div className="result-display">
+          <h2>{result} <span>{to}</span></h2>
+          <small>1 {from} = {(rates[to] / rates[from]).toFixed(4)} {to}</small>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
