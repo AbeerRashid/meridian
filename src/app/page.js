@@ -6,9 +6,6 @@ import { RefreshCcw } from 'lucide-react'; // A nice icon for the UI
 import styles from './page.module.css'; // Some basic styling
 
 export default function Home() {
-  const {
-    rates, chartData, loading, fetchChartData, addToWatchList} = useContext(CurrencyContext);
-  }
   // Grab the live prices from our "Global Brain"
   const { rates, loading } = useContext(CurrencyContext);
 
