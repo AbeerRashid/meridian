@@ -14,7 +14,7 @@ export default function Home() {
   const [to, setTo] = useState('CAD');
 
   //Show a loading screen if the API is still fetching
-  if (loading) return <div className="loader">Updating Markets...</div>;
+  if (loading) return <div className="loader">Pulling Live Market Data...</div>;
 
   // Run the math logic using the data we fetched
   const result = calculateExchange(amount, rates[from], rates[to]);
