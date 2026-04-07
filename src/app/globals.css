@@ -1,6 +1,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --nav-bg: #1a1a1a;
+  --nav-border: #2a2a2a;
+  --nav-shadow: rgba(0, 0, 0, 0.3);
+
+  --nav-text-strong: #f5f5f5;
+  --nav-text-muted: #a1a1a1;
+  --nav-text-hover: #ffffff;
+  --nav-text-active: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {

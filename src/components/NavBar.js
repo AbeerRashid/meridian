@@ -15,6 +15,9 @@ export default function NavBar() {
         <Link href='/watchlist' className={pathname === '/watchlist' ? styles.active : ''}>
           Watchlist
         </Link>
+        <Link href='/themes' className={pathname === '/themes' ? styles.active : ''}>
+          Themes
+        </Link>
       </div>
     </nav>
   );
