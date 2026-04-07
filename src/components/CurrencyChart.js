@@ -12,7 +12,7 @@ export default function CurrencyChart({ data }) {
       width: '100%', 
       height: 300, 
       padding: '20px', 
-      background: '#1e293b', 
+      background: 'var(--input-bg)', 
       borderRadius: '16px',
       marginTop: '20px'
     }}>

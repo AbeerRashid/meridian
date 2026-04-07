@@ -1,0 +1,176 @@
+.container {
+  flex: 1;
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 32px;
+  color: var(--foreground);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #8a8a8a;
+  margin-bottom: 32px;
+}
+
+.grid {
+  width: 100%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.themeButton {
+  width: 100%;
+  min-height: 84px;
+  border: none;
+  border-radius: 18px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.themeButton:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.buttonText {
+  color: inherit;
+}
+
+.colorCircle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.meridian {
+  background: #1a1a1a;
+  color: #f5f5f5;
+}
+
+.meridian .colorCircle {
+  background: #ffffff;
+}
+
+.bloodRed {
+  background: #5c1010;
+  color: #f7e9e9;
+}
+
+.bloodRed .colorCircle {
+  background: #b22222;
+}
+
+.nightOceanBlue {
+  background: #10273d;
+  color: #e7f1fb;
+}
+
+.nightOceanBlue .colorCircle {
+  background: #2e6fa3;
+}
+
+.wealthyGreen {
+  background: #163222;
+  color: #ecf6ef;
+}
+
+.wealthyGreen .colorCircle {
+  background: #2f7d4f;
+}
+
+.mintGreen {
+  background: #bff5e1;
+  color: #1f3a34;
+}
+
+.mintGreen .colorCircle {
+  background: #6ee7c8;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.officeGrey {
+  background: #d9d9d9;
+  color: #2a2a2a;
+}
+
+.officeGrey .colorCircle {
+  background: #8f8f8f;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.prettyInPink {
+  background: #d98cab;
+  color: #fff7fb;
+}
+
+.prettyInPink .colorCircle {
+  background: #ffb6d2;
+}
+
+.perfectPurple {
+  background: #5a3b78;
+  color: #f3edfb;
+}
+
+.perfectPurple .colorCircle {
+  background: #9a6ad6;
+}
+
+.midnightBlack {
+  background: #0b0b0b;
+  color: #e5e5e5;
+}
+
+.midnightBlack .colorCircle {
+  background: #2a2a2a;
+}
+
+.softLavender {
+  background: #c7b8ea;
+  color: #2a1f3d;
+}
+
+.softLavender .colorCircle {
+  background: #a48adf;
+}
+
+.iceBlue {
+  background: #d9f0ff;
+  color: #1c2a35;
+}
+
+.iceBlue .colorCircle {
+  background: #8ecae6;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.mutedAmber {
+  background: #7a4f1d;
+  color: #f3e7d3;
+}
+
+.mutedAmber .colorCircle {
+  background: #a86a2a;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

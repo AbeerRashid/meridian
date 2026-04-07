@@ -1,6 +1,7 @@
 import { CurrencyProvider } from '../context/CurrencyContext';
 import NavBar from '../components/NavBar';
 import "./globals.css";
+import Footer from '../components/Footer';
 
 export const metadata = {
   title: 'Meridian - Real-time Global Exchange',
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
           <main>
             {children}
           </main>
+          <Footer />
         </CurrencyProvider>
       </body>
     </html>

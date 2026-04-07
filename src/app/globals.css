@@ -8,6 +8,17 @@
   --nav-text-muted: #a1a1a1;
   --nav-text-hover: #ffffff;
   --nav-text-active: #ffffff;
+  --card-bg: #1a1a1a;
+  --card-border: #2a2a2a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #a1a1a1;
+  --text-muted: #777;
+  --input-bg: #121212;
+  --input-border: #2a2a2a;
+  --input-text: #ffffff;
+  --button-bg: #1f1f1f;
+  --button-hover: #2a2a2a;
+  --button-text: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -54,7 +65,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 40px 20px 20px;
+  padding: 24px 20px 20px;
 }
 
 .card {
@@ -62,8 +73,8 @@ a {
   max-width: 1000px;
   padding: 24px;
   border-radius: 16px;
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -71,11 +82,11 @@ a {
 
 .card h1 {
   font-size: 28px;
-  color: #f5f5f5;
+  color: var(--text-primary);
 }
 
 .card p {
-  color: #a1a1a1;
+  color: var(--text-secondary);
   font-size: 14px;
 }
 
@@ -83,9 +94,9 @@ a {
   width: 100%;
   padding: 12px;
   border-radius: 10px;
-  border: 1px solid #2a2a2a;
-  background: #121212;
-  color: #ffffff;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-text);
   font-size: 16px;
 }
 
@@ -100,9 +111,9 @@ a {
   flex: 1;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid #2a2a2a;
-  background: #121212;
-  color: #ffffff;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-text);
 }
 
 .result-display {
@@ -112,30 +123,30 @@ a {
 
 .result-display h2 {
   font-size: 26px;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .result-display span {
-  color: #a1a1a1;
+  color: var(--text-secondary);
 }
 
 .result-display small {
-  color: #777;
+  color: var(--text-muted);
 }
 
 .watch-btn {
   margin-top: 10px;
   padding: 12px;
   border-radius: 10px;
-  border: 1px solid #2a2a2a;
-  background: #1f1f1f;
-  color: #ffffff;
+  border: 1px solid var(--card-border);
+  background: var(--button-bg);
+  color: var(--button-text);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .watch-btn:hover {
-  background: #2a2a2a;
+  background: var(--button-hover);
 }
 
 @media (prefers-color-scheme: dark) {
