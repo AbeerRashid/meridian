@@ -1,5 +1,5 @@
 import { CurrencyProvider } from '../context/CurrencyContext';
-import { Navbar } from '../components/Navbar';
+import NavBar from '../components/NavBar';
 import "./globals.css";
 
 export const metadata = {
@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
       <body>
        {/* We wrap the children in the Provider so the UI can see the API data and loading state `rates` and `loading` */}
         <CurrencyProvider>
-        <Navbar />
+        <NavBar />
           <main>
             {children}
           </main>

@@ -1,14 +1,14 @@
-export const calculateExchange =(amount, fromRate, toRate) => {
-    // If input is empty or 0, return 0
-    if (!amount || amount <= 0 )    return 0;
+// calculateExchange: returns a raw number
+export const calculateExchange = (amount, fromRate, toRate) => {
+  if (!amount || amount <= 0) return 0;
+  return (amount / fromRate) * toRate;
+};
 
-
-    // The Math calculation
-    const result = (amount / fromRate) * toRate;
-
-    // Formatting: Returns a string with 2 decimal places (e.g. "1,450.50")
-    return result.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    });
+// formatCurrency: turns a raw number into a display string e.g. "1,364.20"
+export const formatCurrency = (value) => {
+  if (!value || value === 0) return "0.00";
+  return value.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 };
