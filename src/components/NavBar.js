@@ -13,7 +13,7 @@ export default function NavBar() {
           Converter
         </Link>
         <Link href='/watchlist' className={pathname === '/watchlist' ? styles.active : ''}>
-          Watchlist
+          Watch List
         </Link>
         <Link href='/themes' className={pathname === '/themes' ? styles.active : ''}>
           Themes

@@ -8,11 +8,15 @@ import styles from './page.module.css';
 
 export default function Home() {
   // pulling chartData and fetchChartData from context too — were missing before
-  const { rates, chartData, loading, fetchChartData, addToWatchlist } = useContext(CurrencyContext);
+  // added watchlist so we can check if current pair is already saved
+  const { rates, chartData, loading, fetchChartData, addToWatchlist, watchlist } = useContext(CurrencyContext);
 
   const [amount, setAmount] = useState(1);
   const [from, setFrom] = useState('USD');
   const [to, setTo] = useState('CAD');
+
+  // check if current selected pair is already in watchlist
+  const isInWatchlist = watchlist.includes(`${from}/${to}`);
 
   // fetch chart data whenever the user changes the currency pair
   // this was completely missing — without it chartData is always empty
@@ -66,12 +70,17 @@ export default function Home() {
         {/* chart now has data because fetchChartData runs above */}
         <CurrencyChart data={chartData} />
 
-        {/* watchlist button */}
+        {/* watchlist button - now star changes depending on watchlist status */}
         <button
           className="watch-btn"
           onClick={() => addToWatchlist(from, to)}
         >
-          <Star size={16} /> Add to Watchlist
+          <Star
+            size={16}
+            fill={isInWatchlist ? "#b4b4b4" : "none"}
+            stroke="#ffffff"
+          />
+          {isInWatchlist ? "Added to Watch List" : "Add to Watch List"}
         </button>
 
       </div>
