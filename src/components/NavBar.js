@@ -7,7 +7,13 @@ export default function NavBar() {
   const pathname = usePathname();
   return (
     <nav className={styles.nav}>
-      <span className={styles.brand}>Meridian</span>
+      {pathname === '/' ? (
+        <span className={styles.brand}>Meridian</span> // Title now brings back to main convert page
+      ) : (
+        <Link href='/' className={styles.brand}>
+          Meridian
+        </Link>
+      )}
       <div className={styles.links}>
         <Link href='/' className={pathname === '/' ? styles.active : ''}>
           Converter
