@@ -23,11 +23,20 @@
   max-width: 800px;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
   background-color: var(--foreground);
-  padding: 120px 60px;
+  padding: 60px;
+  transition: padding 0.2s;
 }
 
+.ctas {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 440px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 .intro {
   display: flex;
   flex-direction: column;
@@ -108,17 +117,34 @@ a.secondary {
 @media (max-width: 600px) {
   .main {
     padding: 48px 24px;
+    align-items: center;
+    max-width: 100%;
   }
 
   .intro {
-    gap: 16px;
+    align-items: center;
+    text-align: center;
   }
 
   .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+    max-width: 100%;
   }
+}
+
+.intro p {
+  max-width: 100%;
+  font-size: 16px;
+}
+
+.ctas {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.ctas a {
+  width: 100%;
+  max-width: 280px;
 }
 
 @media (prefers-color-scheme: dark) {
