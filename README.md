@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Merdian: Currency Intelligence Dashboard
 
-## Getting Started
+** CPAN 144 - GROUP 4 Project
 
-First, run the development server:
+## Project Team
+* **Abeer Rashid** - Architecture, State Management, and Data Calculation
+* **Autumn Gun-Munro** - UI/UX Design, Navigation, and Visualization Logic
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🏛️  Architecture & Logic
+* **Core Architecture**: Developed the project structure and Next.js App Router configuration.
+* **State Management**: Engineered the `CurrencyContext` using the React Context API to manage global API data and user watchlists.
+* **Calculation Engine**: Authored the `calculation.js` utility, implementing pivot-rate logic for cross-currency accuracy.
+* **Data Visualization**: Integrated `Recharts` and developed the logic for simulated market trend generation.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Abeer Rashid and Autumn: UI/UX & Theming
+* **Global Design Tokens**: Managed the implementation of semantic CSS variables in `globals.css` to ensure consistent branding across the entire dashboard.
+* **Theme Engine Architecture**: [Technical notes on the JavaScript-based theme switcher to be added by Autumn]
+* **Responsive Layouts**: Designed the Footer and Navigation components to maintain structural integrity across mobile, tablet, and desktop viewports.
+* **Component Styling**: Crafted the modular CSS for the Watchlist cards and the "Dark Mode" aesthetic.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Project Overview
+Meridian is a professional-grade Next.js application designed to provide real-time currency conversion and market trend visualization. The project demonstrates a "Separation of Concerns" architecture, utilizing React's Context API for global state, CSS Modules for responsive design, and Recharts for data visualization.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Key Features
+* **Real-Time Conversion**: Live exchange rates fetched from the Open Exchange Rates API.
+* **Intelligent Watchlist**: A personalized dashboard to track specific currency pairs with simulated market trends.
+* **Responsive Visualization**: Dynamic Area Charts that adapt to any screen size (Desktop, Tablet, Mobile).
+* **Robust Logic**: A custom pivot-based calculation engine to convert between non-USD currencies.
 
-## Learn More
+## Technical Architecture
+**Central Intelligence & Routing
+* **`src/app/layout.js`**: The Root Layout that orchestrates the global UI. It wraps the application in the `CurrencyProvider` and establishes the persistent
+Navigation and Footer layers.
+* **`src/context/CurrencyContext.js`**: The "Global Brain." Manages API orchestration, the `watchlist` state, and simulated market volatility.
+* **`src/utils/calculation.js`**: The mathematical engine handling cross-currency pivot math and locale-aware formatting.
 
-To learn more about Next.js, take a look at the following resources:
+## Data Visualization
+* **`src/components/CurrencyChart.js`**: Uses `Recharts` and `ResponsiveContainer` to ensure exchange rate trends look premium on all devices.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## View Components
+* **`src/app/watchlist/page.js`**: Route controller for the personalized Watchlist view.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Styling & Responsiveness
+* **`src/app/globals.css`**: Centralized source of truth for design tokens and semantic CSS variables.
+* **Responsive Logic**: Features a custom **3-Breakpoint System** across all modules to ensure a seamless experience on mobile (under 700px), tablet (under 1024px), and desktop.
 
-## Deploy on Vercel
+## API & Integration
+* **Data Source**: [Open Exchange Rate API](https://open.er-api.com/v6/latest/USD)
+* **Base Logic**: All rates are indexed against USD and recalculated using a pivot ratio ($$Rate_{A \to B} = \frac{Rate_{USD \to B}}{Rate_{USD \to A}}$$) for accuracy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Folder Structure
