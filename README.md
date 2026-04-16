@@ -14,7 +14,7 @@
 
 ### Abeer Rashid and Autumn: UI/UX & Theming
 * **Global Design Tokens**: Managed the implementation of semantic CSS variables in `globals.css` to ensure consistent branding across the entire dashboard.
-* **Theme Engine Architecture**: [Technical notes on the JavaScript-based theme switcher to be added by Autumn]
+* **Theme Engine Architecture**: Engineered a logic-gate system that dynamically injects theme attributes into the document root. This allows for real-time swapping of CSS variable sets (colors, shadows, and borders) without requiring a page reload or state reset of the currency data.
 * **Responsive Layouts**: Designed the Footer and Navigation components to maintain structural integrity across mobile, tablet, and desktop viewports.
 * **Component Styling**: Crafted the modular CSS for the Watchlist cards and the "Dark Mode" aesthetic.
 
