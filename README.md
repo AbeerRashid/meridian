@@ -6,7 +6,7 @@
 * **Abeer Rashid** - Architecture, State Management, and Data Calculation
 * **Autumn Gun-Munro** - UI/UX Design, Navigation, and Visualization Logic
 
-### 🏛️  Architecture & Logic
+### Abeer Rashid and Autumn: Architecture & Logic
 * **Core Architecture**: Developed the project structure and Next.js App Router configuration.
 * **State Management**: Engineered the `CurrencyContext` using the React Context API to manage global API data and user watchlists.
 * **Calculation Engine**: Authored the `calculation.js` utility, implementing pivot-rate logic for cross-currency accuracy.
