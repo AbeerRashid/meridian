@@ -281,15 +281,7 @@ const themeValues = {
 };
 
 export default function ThemesPage() {
-  // Apply saved theme when page opens
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("selectedTheme");
-    if (savedTheme && themeValues[savedTheme]) {
-      applyTheme(savedTheme);
-    }
-  }, []);
-
-  // update CSS variables for selected theme
+ // update CSS variables for selected theme
   const applyTheme = (themeName) => {
     const theme = themeValues[themeName];
     if (!theme) return;
@@ -301,6 +293,15 @@ export default function ThemesPage() {
     localStorage.setItem("selectedTheme", themeName);
   };
 
+  // Apply saved theme when page opens
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("selectedTheme");
+    if (savedTheme && themeValues[savedTheme]) {
+      applyTheme(savedTheme);
+    }
+  }, []);
+
+ 
   const themes = [
     { name: "Meridian", key: "meridian", className: styles.meridian },
     { name: "Blood Red", key: "bloodRed", className: styles.bloodRed },
