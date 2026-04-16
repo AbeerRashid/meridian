@@ -47,5 +47,3 @@ Navigation and Footer layers.
 ## API & Integration
 * **Data Source**: [Open Exchange Rate API](https://open.er-api.com/v6/latest/USD)
 * **Base Logic**: All rates are indexed against USD and recalculated using a pivot ratio ($$Rate_{A \to B} = \frac{Rate_{USD \to B}}{Rate_{USD \to A}}$$) for accuracy.
-
-## Folder Structure
