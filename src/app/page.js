@@ -23,8 +23,10 @@ export default function Home() {
   useEffect(() => {
     if (Object.keys(rates).length > 0) {
       fetchChartData(from, to);
+    } else {
+      console.warn("Rates not loaded yet, cannot fetch chart data");
     }
-  }, [from, to, fetchChartData, rates]);
+  }, [from, to, fetchChartData, rates]); // re-run when from/to changes or when rates first load
 
   if (loading) return <div className="loader">Pulling Live Market Data...</div>;
 
