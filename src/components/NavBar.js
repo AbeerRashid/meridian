@@ -15,9 +15,6 @@ export default function NavBar() {
         </Link>
       )}
       <div className={styles.links}>
-        <Link href='/' className={pathname === '/' ? styles.active : ''}>
-          Converter
-        </Link>
         <Link href='/watchlist' className={pathname === '/watchlist' ? styles.active : ''}>
           Watch List
         </Link>
