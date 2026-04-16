@@ -22,7 +22,7 @@ export default function Home() {
   // this was completely missing — without it chartData is always empty
   useEffect(() => {
     if (Object.keys(rates).length > 0) {
-      fetchChartData(from);
+      fetchChartData(from, to);
     }
   }, [from, to, fetchChartData, rates]);
 
