@@ -22,9 +22,9 @@ export default function Home() {
   // this was completely missing — without it chartData is always empty
   useEffect(() => {
     if (Object.keys(rates).length > 0) {
-      fetchChartData(from, to);
+      fetchChartData(from);
     }
-  }, [from, to, rates]);
+  }, [from, to, fetchChartData, rates]);
 
   if (loading) return <div className="loader">Pulling Live Market Data...</div>;
 
